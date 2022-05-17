@@ -2,6 +2,7 @@ import { useUserContext } from "contexts/UserContext"
 import React from "react"
 import { Link } from "react-router-dom"
 import LogOutLink from "widgets/buttons/LogOutLink"
+import AppLogo from "widgets/text/AppLogo"
 
 const NavigationMenu = () => {
   const { isUserLoggedIn } = useUserContext()
@@ -16,9 +17,8 @@ const NavigationMenu = () => {
     <nav>
       <ul className="flex justify-between items-center">
         <li>
-          <Link to="/">Home</Link>
+          <AppLogo />
         </li>
-        <li className="ml-3">{displaySignUpOrSignOutLink()}</li>
         <li>{displaySignUpOrSignOutLink()}</li>
       </ul>
     </nav>
