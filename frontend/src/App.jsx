@@ -1,6 +1,6 @@
-import "./App.css"
+import "App.css"
 import { useEffect } from "react"
-import PageNavigation from "./pages/PageNavigation"
+import PageNavigation from "pages/PageNavigation"
 
 function App() {
   useEffect(() => {}, [])
