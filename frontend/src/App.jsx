@@ -7,10 +7,9 @@ function App() {
 
   return (
     <Router>
-      <section className="w-2/4 mt-12">
+      <div className="container min-h-screen bg-slate-800">
         <PageNavigation />
-      </section>
-    </div>
+      </div>
     </Router>
   )
 }
