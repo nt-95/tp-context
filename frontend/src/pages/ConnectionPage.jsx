@@ -3,6 +3,7 @@ import ConnectionForm from "widgets/forms/ConnectionForm"
 import Button from "widgets/buttons/Button"
 import SignUpForm from "widgets/forms/SignUpForm"
 import Title from "widgets/text/Title"
+import PageLayout from "layouts/PageLayout"
 
 const ConnectionPage = () => {
   const [signup, setSignup] = useState(false)
@@ -36,9 +37,11 @@ const ConnectionPage = () => {
   }
 
   return (
-    <div className="border-2 border-purple-700 p-6 bg-white">
-      {getContent()}
-    </div>
+    <PageLayout>
+      <div className="border-2 border-purple-700 p-6 mt-8 bg-white w-96">
+        {getContent()}
+      </div>
+    </PageLayout>
   )
 }
 
