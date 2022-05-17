@@ -1,9 +1,9 @@
-import "./App.css";
-import { useEffect } from "react";
-import PageNavigation from "./pages/PageNavigation";
+import "./App.css"
+import { useEffect } from "react"
+import PageNavigation from "./pages/PageNavigation"
 
 function App() {
-  useEffect(() => {}, []);
+  useEffect(() => {}, [])
 
   return (
     <div className="container min-h-screen px-4 py-4 flex justify-center bg-purple-900 selection:bg-fuchsia-300 selection:text-purple-900">
@@ -11,7 +11,7 @@ function App() {
         <PageNavigation />
       </section>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

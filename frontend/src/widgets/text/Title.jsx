@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 
 const Title = ({ children }) => {
-  return <h1 className="font-bold text-lg">{children}</h1>;
-};
+  return <h1 className="font-bold text-lg">{children}</h1>
+}
 
-export default Title;
+export default Title

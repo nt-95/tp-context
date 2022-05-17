@@ -1,26 +1,26 @@
-import React, { useState } from "react";
-import Label from "widgets/forms/Label";
-import Form from "widgets/forms/Form";
-import InputSection from "widgets/forms/InputSection";
-import Input from "widgets/forms/Input";
-import Button from "widgets/buttons/Button";
-import Title from "widgets/text/Title";
-import ErrorMessage from "widgets/text/ErrorMessage";
+import React, { useState } from "react"
+import Label from "widgets/forms/Label"
+import Form from "widgets/forms/Form"
+import InputSection from "widgets/forms/InputSection"
+import Input from "widgets/forms/Input"
+import Button from "widgets/buttons/Button"
+import Title from "widgets/text/Title"
+import ErrorMessage from "widgets/text/ErrorMessage"
 
 const ArticleForm = ({ setUpdateArticleList }) => {
-  const [articleData, setArticleData] = useState({});
-  const [errorMessage, setErrorMessage] = useState("");
+  const [articleData, setArticleData] = useState({})
+  const [errorMessage, setErrorMessage] = useState("")
 
   const handleChange = (e) => {
-    setErrorMessage("");
-    setArticleData({ ...articleData, [e.target.id]: e.target.value });
-  };
+    setErrorMessage("")
+    setArticleData({ ...articleData, [e.target.id]: e.target.value })
+  }
 
   const postArticle = async () => {
     const headers = new Headers({
       "Content-Type": "application/x-www-form-urlencoded",
       Authorization: `Bearer${sessionStorage.getItem("token")}`,
-    });
+    })
     try {
       const response = await fetch(
         "http://localhost:2345/index.php/article/post",
@@ -31,25 +31,25 @@ const ArticleForm = ({ setUpdateArticleList }) => {
           mode: "cors",
           credentials: "include",
         }
-      );
+      )
       if (response.status >= 200 && response.status <= 299) {
-        const data = await response.json();
-        console.log(data);
-        setUpdateArticleList(Math.random() * 1000000);
-        setArticleData({});
-      } else throw new Error(response.statusText);
+        const data = await response.json()
+        console.log(data)
+        setUpdateArticleList(Math.random() * 1000000)
+        setArticleData({})
+      } else throw new Error(response.statusText)
     } catch (err) {
-      setErrorMessage(err.toString());
+      setErrorMessage(err.toString())
     }
-  };
+  }
 
   const submit = () => {
     if (!articleData.title || !articleData.content) {
-      setErrorMessage("Fields can not be empty");
-      return;
+      setErrorMessage("Fields can not be empty")
+      return
     }
-    postArticle();
-  };
+    postArticle()
+  }
 
   return (
     <Form>
@@ -78,7 +78,7 @@ const ArticleForm = ({ setUpdateArticleList }) => {
       <Button onClick={() => submit()} name="Publish Article" primary />
       <ErrorMessage errorMessage={errorMessage} />
     </Form>
-  );
-};
+  )
+}
 
-export default ArticleForm;
+export default ArticleForm

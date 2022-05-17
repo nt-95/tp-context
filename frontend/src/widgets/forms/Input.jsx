@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 const Input = ({ placeholder, id, type, onChange, value }) => {
   return (
@@ -12,7 +12,7 @@ const Input = ({ placeholder, id, type, onChange, value }) => {
       onChange={onChange}
       value={value}
     ></input>
-  );
-};
+  )
+}
 
-export default Input;
+export default Input

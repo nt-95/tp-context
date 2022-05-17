@@ -1,14 +1,14 @@
-import React from "react";
-import Article from "widgets/grouped/Article";
+import React from "react"
+import Article from "widgets/grouped/Article"
 
 const ArticlesList = ({ articles }) => {
   const displayArticles = () => {
     return articles.map((article, i) => {
-      return <Article key={i} article={article} />;
-    });
-  };
+      return <Article key={i} article={article} />
+    })
+  }
 
-  return displayArticles().reverse();
-};
+  return displayArticles().reverse()
+}
 
-export default ArticlesList;
+export default ArticlesList

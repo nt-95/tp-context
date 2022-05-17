@@ -1,5 +1,5 @@
-import React from "react";
-import Title from "widgets/text/Title";
+import React from "react"
+import Title from "widgets/text/Title"
 
 const Article = ({ article }) => {
   return (
@@ -12,7 +12,7 @@ const Article = ({ article }) => {
       </h3>
       <p className="mt-3">{article?.content}</p>
     </div>
-  );
-};
+  )
+}
 
-export default Article;
+export default Article

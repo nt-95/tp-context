@@ -1,13 +1,13 @@
-import React from "react";
-import Button from "widgets/buttons/Button";
+import React from "react"
+import Button from "widgets/buttons/Button"
 
 const LogOutButton = () => {
   const handleLogOut = () => {
-    sessionStorage.removeItem("token");
-    window.location.reload();
-  };
+    sessionStorage.removeItem("token")
+    window.location.reload()
+  }
 
-  return <Button onClick={() => handleLogOut()} name="Log Out" />;
-};
+  return <Button onClick={() => handleLogOut()} name="Log Out" />
+}
 
-export default LogOutButton;
+export default LogOutButton
