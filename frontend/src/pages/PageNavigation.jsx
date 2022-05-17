@@ -1,9 +1,11 @@
 import React from "react"
 import ArticlePage from "pages/ArticlePage"
 import ConnectionPage from "pages/ConnectionPage"
+import { Routes, Route } from "react-router-dom"
+import HomePage from "pages/HomePage"
 
 const PageNavigation = () => {
-  const getPage = () => {
+  const getRoute = () => {
     if (
       sessionStorage.getItem("token") &&
       sessionStorage.getItem("token") !== undefined
@@ -13,7 +15,12 @@ const PageNavigation = () => {
     return <ConnectionPage />
   }
 
-  return getPage()
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/connection" element={<ConnectionPage />} />
+    </Routes>
+  )
 }
 
 export default PageNavigation
