@@ -2,6 +2,7 @@ import { useUserContext } from "contexts/UserContext"
 import React from "react"
 import { Link } from "react-router-dom"
 import LogOutLink from "widgets/buttons/LogOutLink"
+import SearchBar from "widgets/forms/SearchBar"
 import AppLogo from "widgets/text/AppLogo"
 
 const NavigationMenu = () => {
@@ -18,6 +19,9 @@ const NavigationMenu = () => {
       <ul className="flex justify-between items-center">
         <li>
           <AppLogo />
+        </li>
+        <li>
+          <SearchBar />
         </li>
         <li>{displaySignUpOrSignOutLink()}</li>
       </ul>
