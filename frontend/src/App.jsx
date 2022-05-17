@@ -1,4 +1,3 @@
-import "App.css"
 import { useEffect } from "react"
 import PageNavigation from "pages/PageNavigation"
 
