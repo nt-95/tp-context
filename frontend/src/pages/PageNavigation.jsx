@@ -1,6 +1,6 @@
-import React from "react";
-import ArticlePage from "./ArticlePage";
-import ConnectionPage from "./ConnectionPage";
+import React from "react"
+import ArticlePage from "pages/ArticlePage"
+import ConnectionPage from "pages/ConnectionPage"
 
 const PageNavigation = () => {
   const getPage = () => {
@@ -8,12 +8,12 @@ const PageNavigation = () => {
       sessionStorage.getItem("token") &&
       sessionStorage.getItem("token") !== undefined
     ) {
-      return <ArticlePage />;
+      return <ArticlePage />
     }
-    return <ConnectionPage />;
-  };
+    return <ConnectionPage />
+  }
 
-  return getPage();
-};
+  return getPage()
+}
 
-export default PageNavigation;
+export default PageNavigation

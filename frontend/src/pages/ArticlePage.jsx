@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import ArticleForm from "../widgets/forms/ArticleForm";
-import ArticleListSection from "./ArticleListSection";
-import LogOutButton from "./../widgets/buttons/LogOutButton";
+import React, { useState } from "react"
+import ArticleForm from "widgets/forms/ArticleForm"
+import ArticleListSection from "pages/ArticleListSection"
+import LogOutButton from "widgets/buttons/LogOutButton"
 
 const ArticlePage = () => {
-  const [updateArticleList, setUpdateArticleList] = useState();
+  const [updateArticleList, setUpdateArticleList] = useState()
   return (
     <>
       <section className="flex justify-between items-center">
@@ -19,7 +19,7 @@ const ArticlePage = () => {
       <ArticleForm setUpdateArticleList={setUpdateArticleList} />
       <ArticleListSection updateArticleList={updateArticleList} />
     </>
-  );
-};
+  )
+}
 
-export default ArticlePage;
+export default ArticlePage

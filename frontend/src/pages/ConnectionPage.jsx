@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import ConnectionForm from "./../widgets/forms/ConnectionForm";
-import Button from "./../widgets/buttons/Button";
-import SignUpForm from "./../widgets/forms/SignUpForm";
-import Title from "../widgets/text/Title";
+import React, { useState } from "react"
+import ConnectionForm from "widgets/forms/ConnectionForm"
+import Button from "widgets/buttons/Button"
+import SignUpForm from "widgets/forms/SignUpForm"
+import Title from "widgets/text/Title"
 
 const ConnectionPage = () => {
-  const [signup, setSignup] = useState(false);
+  const [signup, setSignup] = useState(false)
 
   const getContent = () => {
     if (signup) {
@@ -21,7 +21,7 @@ const ConnectionPage = () => {
             />
           </section>
         </>
-      );
+      )
     }
     return (
       <>
@@ -32,14 +32,14 @@ const ConnectionPage = () => {
           <Button onClick={() => setSignup(true)} name={"Sign Up"} />
         </section>
       </>
-    );
-  };
+    )
+  }
 
   return (
     <div className="border-2 border-purple-700 p-6 bg-white">
       {getContent()}
     </div>
-  );
-};
+  )
+}
 
-export default ConnectionPage;
+export default ConnectionPage
