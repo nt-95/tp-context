@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import ArticleForm from "widgets/forms/ArticleForm"
 import ArticleListSection from "pages/ArticleListSection"
-import LogOutButton from "widgets/buttons/LogOutButton"
+import LogOutLink from "widgets/buttons/LogOutLink"
 
 const ArticlePage = () => {
   const [updateArticleList, setUpdateArticleList] = useState()
@@ -14,7 +14,7 @@ const ArticlePage = () => {
             {sessionStorage.getItem("username")}
           </span>
         </p>
-        <LogOutButton />
+        <LogOutLink />
       </section>
       <ArticleForm setUpdateArticleList={setUpdateArticleList} />
       <ArticleListSection updateArticleList={updateArticleList} />
