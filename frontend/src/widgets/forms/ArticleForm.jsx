@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import Label from "./Label";
-import Form from "./Form";
-import InputSection from "./InputSection";
-import Input from "./Input";
-import Button from "./../buttons/Button";
-import Title from "./../text/Title";
-import ErrorMessage from "../text/ErrorMessage";
+import Label from "widgets/forms/Label";
+import Form from "widgets/forms/Form";
+import InputSection from "widgets/forms/InputSection";
+import Input from "widgets/forms/Input";
+import Button from "widgets/buttons/Button";
+import Title from "widgets/text/Title";
+import ErrorMessage from "widgets/text/ErrorMessage";
 
 const ArticleForm = ({ setUpdateArticleList }) => {
   const [articleData, setArticleData] = useState({});

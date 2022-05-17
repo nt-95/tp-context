@@ -1,5 +1,5 @@
 import React from "react";
-import Article from "../grouped/Article";
+import Article from "widgets/grouped/Article";
 
 const ArticlesList = ({ articles }) => {
   const displayArticles = () => {

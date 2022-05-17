@@ -1,5 +1,5 @@
 import React from "react";
-import Title from "./../text/Title";
+import Title from "widgets/text/Title";
 
 const Article = ({ article }) => {
   return (

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import Button from "./../buttons/Button";
-import Label from "./Label";
-import Form from "./Form";
-import InputSection from "./InputSection";
-import Input from "./Input";
-import ErrorMessage from "./../text/ErrorMessage";
+import Button from "widgets/buttons/Button";
+import Label from "widgets/forms/Label";
+import Form from "widgets/forms/Form";
+import InputSection from "widgets/forms/InputSection";
+import Input from "widgets/forms/Input";
+import ErrorMessage from "widgets/text/ErrorMessage";
 
 const SignUpForm = () => {
   const [userData, setUserData] = useState({});
