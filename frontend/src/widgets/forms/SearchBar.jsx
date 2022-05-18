@@ -1,8 +1,9 @@
-import React, { useState } from "react"
+import { useMovieResultsContext } from "contexts/MovieResultsContext"
+import React from "react"
 import SearchButton from "widgets/buttons/SearchButton"
 
 const SearchBar = () => {
-  const [results, setResults] = useState(null)
+  const { setSearchResults } = useMovieResultsContext()
 
   const submit = async (query) => {
     try {
@@ -12,10 +13,10 @@ const SearchBar = () => {
       )
       if (response.status >= 200 && response.status <= 299) {
         const data = await response.json()
-        setResults(data)
+        setSearchResults(data)
       } else throw new Error(response.statusText)
     } catch (err) {
-      setResults(null)
+      setSearchResults(null)
     }
   }
 

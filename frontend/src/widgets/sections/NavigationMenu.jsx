@@ -2,7 +2,7 @@ import { useUserContext } from "contexts/UserContext"
 import React from "react"
 import { Link } from "react-router-dom"
 import LogOutLink from "widgets/buttons/LogOutLink"
-import SearchBar from "widgets/forms/SearchBar"
+import SearchArea from "widgets/grouped/SearchArea"
 import AppLogo from "widgets/text/AppLogo"
 
 const NavigationMenu = () => {
@@ -21,7 +21,7 @@ const NavigationMenu = () => {
           <AppLogo />
         </li>
         <li>
-          <SearchBar />
+          <SearchArea />
         </li>
         <li>{displaySignUpOrSignOutLink()}</li>
       </ul>
