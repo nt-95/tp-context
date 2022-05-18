@@ -1,9 +1,10 @@
 import { useMovieResultsContext } from "contexts/MovieResultsContext"
-import React from "react"
+import React, { useState } from "react"
 import SearchButton from "widgets/buttons/SearchButton"
 
 const SearchBar = () => {
   const { setSearchResults } = useMovieResultsContext()
+  const [query, setQuery] = useState("")
 
   const submit = async (query) => {
     try {
@@ -20,9 +21,30 @@ const SearchBar = () => {
     }
   }
 
+  /**
+   * @description Update the query state with the value of the input field
+   * @param {Event} e
+   */
+  const handleChange = (e) => {
+    setQuery(e.target.value)
+  }
+
+  /**
+   * @description Prevents click from bubbling up and submits query
+   * @param {Event} e
+   */
+  const handleClick = (e) => {
+    e.preventDefault()
+    submit(query)
+  }
+
+  /**
+   * @description Submits query when Enter is pressed
+   * @param {Event} e
+   */
   const handleKeyDown = (e) => {
     if (e.key === "Enter") {
-      submit(e.target.value)
+      submit(query)
     }
   }
 
@@ -35,8 +57,9 @@ const SearchBar = () => {
         name="name"
         placeholder="Search for a movie"
         onKeyDown={handleKeyDown}
+        onChange={handleChange}
       />
-      <SearchButton onClick={submit} />
+      <SearchButton onClick={handleClick} />
     </div>
   )
 }
