@@ -12,7 +12,7 @@ const MovieResult = ({ movie }) => {
   }
 
   return (
-    <Link to="/movie_page" onClick={handleClick}>
+    <Link to="/movie" onClick={handleClick}>
       <div className="flex p-2">
         <MoviePosterThumbnailLayout>
           <MoviePoster movie={movie} />
