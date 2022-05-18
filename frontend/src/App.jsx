@@ -4,8 +4,6 @@ import { BrowserRouter as Router } from "react-router-dom"
 import UserProvider from "contexts/UserContext"
 
 function App() {
-  useEffect(() => {}, [])
-
   return (
     <Router>
       <UserProvider>
