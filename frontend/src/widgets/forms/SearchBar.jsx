@@ -26,7 +26,7 @@ const SearchBar = () => {
   }
 
   return (
-    <div className="bg-white text-black flex justify-between align-center p-1 w-80">
+    <div className="bg-white text-black flex justify-between align-center p-1 w-96">
       <input
         className="focus:outline-none"
         type="text"
