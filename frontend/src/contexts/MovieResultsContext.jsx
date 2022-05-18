@@ -9,9 +9,12 @@ export const useMovieResultsContext = () => {
 
 const MovieResultsProvider = ({ children }) => {
   const [searchResults, setSearchResults] = useState(null)
+  const [currentMovie, setCurrentMovie] = useState({})
 
   return (
-    <MovieResultsContext.Provider value={{ searchResults, setSearchResults }}>
+    <MovieResultsContext.Provider
+      value={{ searchResults, setSearchResults, currentMovie, setCurrentMovie }}
+    >
       {children}
     </MovieResultsContext.Provider>
   )
