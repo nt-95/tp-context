@@ -3,7 +3,7 @@ import React, { useState } from "react"
 import SearchButton from "widgets/buttons/SearchButton"
 
 const SearchBar = () => {
-  const { setSearchResults } = useMovieResultsContext()
+  const { setSearchResults, setStyleHidden } = useMovieResultsContext()
   const [query, setQuery] = useState("")
 
   const submit = async (query) => {
@@ -15,6 +15,7 @@ const SearchBar = () => {
       if (response.status >= 200 && response.status <= 299) {
         const data = await response.json()
         setSearchResults(data)
+        setStyleHidden("")
       } else throw new Error(response.statusText)
     } catch (err) {
       setSearchResults(null)
@@ -33,7 +34,7 @@ const SearchBar = () => {
    * @description Prevents click from bubbling up and submits query
    * @param {Event} e
    */
-  const handleClick = (e) => {
+  const handleSearchButtonClick = (e) => {
     e.preventDefault()
     submit(query)
   }
@@ -51,7 +52,7 @@ const SearchBar = () => {
   return (
     <div className="bg-white text-black flex justify-between align-center p-1 w-96">
       <input
-        className="focus:outline-none"
+        className="focus:outline-none w-full"
         type="text"
         id="name"
         name="name"
@@ -59,7 +60,7 @@ const SearchBar = () => {
         onKeyDown={handleKeyDown}
         onChange={handleChange}
       />
-      <SearchButton onClick={handleClick} />
+      <SearchButton onClick={handleSearchButtonClick} />
     </div>
   )
 }

@@ -3,7 +3,7 @@ import React from "react"
 import MovieResult from "widgets/grouped/MovieResult"
 
 const SearchResults = () => {
-  const { searchResults } = useMovieResultsContext()
+  const { searchResults, styleHidden } = useMovieResultsContext()
 
   const displaySearchResults = () => {
     return searchResults.results.map((result, i) => {
@@ -15,7 +15,9 @@ const SearchResults = () => {
     return null
   }
   return (
-    <div className="bg-white w-96 h-3/4 mt-1 absolute text-black overflow-y-scroll">
+    <div
+      className={`bg-white w-96 h-3/4 mt-1 absolute text-black overflow-y-scroll ${styleHidden}`}
+    >
       {displaySearchResults()}
     </div>
   )
