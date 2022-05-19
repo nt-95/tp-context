@@ -16,7 +16,7 @@ const SearchResults = () => {
   }
   return (
     <div
-      className={`bg-white w-96 h-3/4 mt-1 absolute text-black overflow-y-scroll ${styleHidden}`}
+      className={`bg-white w-96 max-h-[70%] mt-1 absolute text-black overflow-y-scroll ${styleHidden}`}
     >
       {displaySearchResults()}
     </div>
