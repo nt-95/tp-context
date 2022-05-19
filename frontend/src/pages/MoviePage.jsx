@@ -1,19 +1,31 @@
 import { useMovieResultsContext } from "contexts/MovieResultsContext"
+import MoviePosterWideLayout from "layouts/MoviePosterWideLayout"
 import PageLayout from "layouts/PageLayout"
-import React, { useEffect } from "react"
+import React from "react"
 import { Navigate } from "react-router-dom"
+import MoviePoster from "widgets/embedding/MoviePoster"
 
 const MoviePage = () => {
   const { currentMovie } = useMovieResultsContext()
 
-  useEffect(() => {
-    console.log(currentMovie)
-  }, [currentMovie])
-
   if (!currentMovie) {
     return <Navigate to="/" />
   }
-  return <PageLayout>{currentMovie.title}</PageLayout>
+  return (
+    <PageLayout>
+      <div className="p-4 mx-4 text-white md:flex md:justify-between">
+        <MoviePosterWideLayout>
+          <MoviePoster movie={currentMovie} />
+        </MoviePosterWideLayout>
+        <section className="md:ml-2 md:max-w-[50%] lg:max-w-[70%]">
+          <p className="text-xl mt-6 md:mt-0 mb-6">{currentMovie.title}</p>
+          <p className="mt-2">{currentMovie.release_date}</p>
+          <p className="mt-2 mb-4">{`Note: ${currentMovie.vote_average}`}</p>
+          <p className="mt-2 text-zinc-300">{currentMovie.overview}</p>
+        </section>
+      </div>
+    </PageLayout>
+  )
 }
 
 export default MoviePage
