@@ -1,5 +1,4 @@
 import React from "react"
-import Title from "widgets/text/Title"
 
 const Review = ({ review }) => {
   return (
