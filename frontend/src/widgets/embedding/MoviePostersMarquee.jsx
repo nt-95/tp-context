@@ -10,10 +10,8 @@ const MoviePostersMarquee = () => {
 
   return (
     <div className="flex h-[90%] w-screen absolute bottom-0 overflow-hidden">
-      <div className="flex border-green-400 border-2 h-full w-fit animate-marquee">
-        {getPosters()}
-      </div>
-      <div className="flex relative left-0 border-pink-400 border-2 w-fit h-full animate-marquee">
+      <div className="flex h-full w-fit animate-marquee">{getPosters()}</div>
+      <div className="flex relative left-0 w-fit h-full animate-marquee">
         {getPosters()}
       </div>
     </div>
