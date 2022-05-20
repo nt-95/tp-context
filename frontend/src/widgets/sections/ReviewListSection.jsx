@@ -25,8 +25,10 @@ const ReviewListSection = () => {
   }, [updateReviewList])
 
   return (
-    <section className="my-6 bg-yellow-400 p-6 text-black rounded-lg">
-      <Title>All reviews for this movie</Title>
+    <section className="my-6 text-white">
+      <p className="rounded-lg bg-yellow-400 text-3xl text-black text-center py-4 font-bold">
+        All reviews for this movie
+      </p>
       <ReviewList reviews={reviews} />
     </section>
   )

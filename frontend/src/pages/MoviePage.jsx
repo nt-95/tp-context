@@ -5,6 +5,7 @@ import React from "react"
 import { Navigate } from "react-router-dom"
 import MoviePoster from "widgets/embedding/MoviePoster"
 import ReviewArea from "widgets/grouped/ReviewArea"
+import ReviewListSection from "widgets/sections/ReviewListSection"
 
 const MoviePage = () => {
   const { currentMovie } = useMovieResultsContext()
@@ -14,17 +15,18 @@ const MoviePage = () => {
   }
   return (
     <PageLayout>
-      <div className="p-4 mx-4 text-white h-full w-full md:flex overflow-auto">
+      <div className="p-4 mx-4 text-white h-full w-full overflow-auto md:flex md:flex-wrap">
         <MoviePosterWideLayout>
           <MoviePoster movie={currentMovie} />
         </MoviePosterWideLayout>
-        <section className="md:ml-2 md:max-w-[50%] lg:w-[70%]">
+        <section className="md:ml-2 md:max-w-[55%] lg:w-[65%]">
           <p className="text-xl mt-6 md:mt-0 mb-6">{currentMovie.title}</p>
           <p className="mt-2">{currentMovie.release_date}</p>
           <p className="mt-2 mb-4">{`Note: ${currentMovie.vote_average}`}</p>
-          <p className="mt-2 text-zinc-300">{currentMovie.overview}</p>
+          <p className="mt-2 mb-10 text-zinc-300">{currentMovie.overview}</p>
           <ReviewArea />
         </section>
+        <ReviewListSection />
       </div>
     </PageLayout>
   )
