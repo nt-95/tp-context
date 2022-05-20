@@ -8,4 +8,6 @@ In the project directory, run:
 
 In the `/frontend` directory, run
 
+### `npm i` (first installation)
+
 ### `npm run start`
