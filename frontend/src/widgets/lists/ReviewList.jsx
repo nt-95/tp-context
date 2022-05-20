@@ -8,6 +8,13 @@ const ReviewList = ({ reviews }) => {
     })
   }
 
+  if (!reviews || !reviews.length) {
+    return (
+      <div className="py-6 my-3 w-full break-word bg-zinc-900 px-3 rounded-lg">
+        There are no reviews yet
+      </div>
+    )
+  }
   return displayArticles().reverse()
 }
 
