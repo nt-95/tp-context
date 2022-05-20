@@ -25,7 +25,7 @@ const ReviewListSection = () => {
   }, [updateReviewList])
 
   return (
-    <section className="my-6 text-white">
+    <section className="my-6 text-white w-full">
       <p className="rounded-lg bg-yellow-400 text-3xl text-black text-center py-4 font-bold">
         All reviews for this movie
       </p>
