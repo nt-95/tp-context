@@ -13,7 +13,7 @@ const MoviePage = () => {
   }
   return (
     <PageLayout>
-      <div className="p-4 mx-4 text-white md:flex md:justify-between">
+      <div className="p-4 mx-4 text-white h-full md:flex md:justify-between">
         <MoviePosterWideLayout>
           <MoviePoster movie={currentMovie} />
         </MoviePosterWideLayout>
