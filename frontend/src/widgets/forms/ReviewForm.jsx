@@ -39,7 +39,7 @@ const ReviewForm = () => {
       )
       if (response.status >= 200 && response.status <= 299) {
         const data = await response.json()
-        setUpdateReviewList(Math.random() * 1000000)
+        setUpdateReviewList(Math.random() * 1000000) // ugly way to update the review list because the server doesn't return the updated review list in the POST response
         setSuccessMessage(data.message)
         setReviewData({})
       } else throw new Error(response.statusText)
