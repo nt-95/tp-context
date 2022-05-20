@@ -58,7 +58,7 @@ class ArticleController extends BaseController
                 $body = file_get_contents('php://input');
                 $body = json_decode($body, true);
                 $response = $articleModel->postArticle($body, $author);
-                $responseData = json_encode(array('response' => $response, 'message'=> "Successfully posted article!"));
+                $responseData = json_encode(array('response' => $response, 'message'=> "Successfully posted review!"));
             } catch (Error $e) {
                 $strErrorDesc = $e->getMessage();
                 $strErrorHeader = 'HTTP/1.1 500 Internal Server Error';
