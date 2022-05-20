@@ -10,10 +10,10 @@ import SuccessMessage from "widgets/text/SuccessMessage"
 import { useMovieResultsContext } from "contexts/MovieResultsContext"
 
 const ReviewForm = () => {
-  const [reviewData, setReviewData] = useState({})
   const [errorMessage, setErrorMessage] = useState("")
   const [successMessage, setSuccessMessage] = useState("")
-  const { setUpdateReviewList } = useMovieResultsContext()
+  const { setUpdateReviewList, currentMovie } = useMovieResultsContext()
+  const [reviewData, setReviewData] = useState({ movie_id: currentMovie.id })
 
   const handleChange = (e) => {
     setErrorMessage("")

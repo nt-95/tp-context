@@ -15,9 +15,10 @@ class ArticleModel extends Database
         $content = $body['content'];
         $date = new DateTime();
         $date = $date->format('Y-m-d H:i:s');
+        $movie_id = $body['movie_id'];
 
         $db = new Database();
-        $query = "INSERT INTO articles VALUES (?, ?, ?, ?, ?)";
+        $query = "INSERT INTO articles VALUES (?, ?, ?, ?, ?, ?)";
         try {
             $stmt = $db->connection->prepare( $query );
  
@@ -25,7 +26,7 @@ class ArticleModel extends Database
                 throw New Exception("Unable to do prepared statement: " . $query);
             }
        
-            $stmt->bind_param("issss", $id, $title, $author, $content, $date);
+            $stmt->bind_param("issssi", $id, $title, $author, $content, $date, $movie_id);
  
             $stmt->execute();
             return $stmt;
