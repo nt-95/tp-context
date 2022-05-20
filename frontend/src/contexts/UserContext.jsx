@@ -9,9 +9,10 @@ export const useUserContext = () => {
 
 const UserProvider = ({ children }) => {
   const isUserLoggedIn = !!sessionStorage.getItem("token")
+  const username = sessionStorage.getItem("username")
 
   return (
-    <UserContext.Provider value={{ isUserLoggedIn }}>
+    <UserContext.Provider value={{ isUserLoggedIn, username }}>
       {children}
     </UserContext.Provider>
   )
