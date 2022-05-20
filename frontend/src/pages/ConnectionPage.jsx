@@ -4,9 +4,12 @@ import Button from "widgets/buttons/Button"
 import SignUpForm from "widgets/forms/SignUpForm"
 import Title from "widgets/text/Title"
 import PageLayout from "layouts/PageLayout"
+import { useUserContext } from "contexts/UserContext"
+import { Navigate } from "react-router-dom"
 
 const ConnectionPage = () => {
   const [signup, setSignup] = useState(false)
+  const { isUserLoggedIn } = useUserContext()
 
   const getContent = () => {
     if (signup) {
@@ -36,6 +39,9 @@ const ConnectionPage = () => {
     )
   }
 
+  if (isUserLoggedIn) {
+    return <Navigate to="/" />
+  }
   return (
     <PageLayout>
       <div className="bg-yellow-400 p-6 mt-8 w-96">{getContent()}</div>
