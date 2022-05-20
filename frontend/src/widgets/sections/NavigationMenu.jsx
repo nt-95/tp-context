@@ -1,9 +1,9 @@
 import { useUserContext } from "contexts/UserContext"
 import React from "react"
 import { Link } from "react-router-dom"
-import LogOutLink from "widgets/buttons/LogOutLink"
 import SearchArea from "widgets/grouped/SearchArea"
 import AppLogo from "widgets/text/AppLogo"
+import UserArea from "widgets/sections/UserArea"
 
 const NavigationMenu = () => {
   const { isUserLoggedIn } = useUserContext()
@@ -11,19 +11,23 @@ const NavigationMenu = () => {
   const displaySignUpOrSignOutLink = () => {
     if (!isUserLoggedIn) {
       return <Link to="connection">Log In</Link>
-    } else return <LogOutLink />
+    } else return <UserArea />
   }
 
   return (
     <nav>
-      <ul className="flex justify-between items-center">
+      <ul className="grid  grid-rows-1 grid-cols-3 gap-x-3">
         <li>
           <AppLogo />
         </li>
         <li>
           <SearchArea />
         </li>
-        <li>{displaySignUpOrSignOutLink()}</li>
+        <li>
+          <section className="flex justify-end">
+            {displaySignUpOrSignOutLink()}
+          </section>
+        </li>
       </ul>
     </nav>
   )
