@@ -26,8 +26,8 @@ const ReviewListSection = () => {
 
   return (
     <section className="my-6 text-white w-full">
-      <p className="rounded-lg bg-yellow-400 text-3xl text-black text-center py-4 font-bold">
-        All reviews for this movie
+      <p className="rounded-lg bg-yellow-400 text-2xl md:text-3xl text-black text-center py-4 font-bold">
+        📽️ All reviews for this movie 🎞️
       </p>
       <ReviewList reviews={reviews} />
     </section>
