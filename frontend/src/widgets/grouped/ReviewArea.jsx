@@ -1,10 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import ReviewForm from "widgets/forms/ReviewForm"
 import ReviewListSection from "widgets/sections/ReviewListSection"
 import { useUserContext } from "contexts/UserContext"
 
 const ReviewArea = () => {
-  const [updateReviewList, setUpdateReviewList] = useState()
   const { username } = useUserContext()
 
   if (!username) {
@@ -12,8 +11,8 @@ const ReviewArea = () => {
   }
   return (
     <>
-      <ReviewForm setUpdateReviewList={setUpdateReviewList} />
-      <ReviewListSection updateReviewList={updateReviewList} />
+      <ReviewForm />
+      <ReviewListSection />
     </>
   )
 }

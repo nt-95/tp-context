@@ -7,11 +7,13 @@ import Button from "widgets/buttons/Button"
 import Title from "widgets/text/Title"
 import ErrorMessage from "widgets/text/ErrorMessage"
 import SuccessMessage from "widgets/text/SuccessMessage"
+import { useMovieResultsContext } from "contexts/MovieResultsContext"
 
-const ReviewForm = ({ setUpdateReviewList }) => {
+const ReviewForm = () => {
   const [reviewData, setReviewData] = useState({})
   const [errorMessage, setErrorMessage] = useState("")
   const [successMessage, setSuccessMessage] = useState("")
+  const { setUpdateReviewList } = useMovieResultsContext()
 
   const handleChange = (e) => {
     setErrorMessage("")

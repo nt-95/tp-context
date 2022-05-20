@@ -11,6 +11,7 @@ const MovieResultsProvider = ({ children }) => {
   const [searchResults, setSearchResults] = useState(null)
   const [styleHidden, setStyleHidden] = useState("hidden")
   const [currentMovie, setCurrentMovie] = useState(null)
+  const [updateReviewList, setUpdateReviewList] = useState()
 
   return (
     <MovieResultsContext.Provider
@@ -21,6 +22,8 @@ const MovieResultsProvider = ({ children }) => {
         setCurrentMovie,
         styleHidden,
         setStyleHidden,
+        updateReviewList,
+        setUpdateReviewList,
       }}
     >
       {children}
