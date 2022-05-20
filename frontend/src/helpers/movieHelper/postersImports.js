@@ -9,7 +9,7 @@ import howToMakeAMonster from "assets/jpg/how-to-make-a-monster.jpg"
 import shocker from "assets/jpg/shocker.jpg"
 import theNet from "assets/jpg/the-net.jpg"
 import videoDead from "assets/jpg/video-dead.jpg"
-import xtro from "assets/jpg/xtro.jpg"
+import xfiles from "assets/jpg/xfiles.jpg"
 import terminator from "assets/jpg/terminator.jpg"
 import maximumOverdrive from "assets/jpg/maximum-overdrive.jpg"
 
@@ -23,9 +23,9 @@ export const postersArray = [
   terminator,
   hackers,
   shocker,
+  xfiles,
   videoDead,
   howToMakeAMonster,
   demoni,
-  xtro,
   maximumOverdrive,
 ]
