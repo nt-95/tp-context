@@ -44,7 +44,9 @@ const ConnectionPage = () => {
   }
   return (
     <PageLayout>
-      <div className="bg-yellow-400 p-6 mt-8 w-96">{getContent()}</div>
+      <div className="bg-yellow-400 rounded-lg p-6 mt-8 w-96">
+        {getContent()}
+      </div>
     </PageLayout>
   )
 }

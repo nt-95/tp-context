@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
-import ArticlesList from "widgets/lists/ArticlesList"
+import ReviewList from "widgets/lists/ReviewList"
 import Title from "widgets/text/Title"
 
-const ArticleListSection = ({ updateArticleList }) => {
-  const [articles, setArticles] = useState([])
+const ReviewListSection = ({ updateReviewList }) => {
+  const [reviews, setReviews] = useState([])
 
   useEffect(() => {
     async function fetchData() {
@@ -13,21 +13,21 @@ const ArticleListSection = ({ updateArticleList }) => {
         )
         if (response.status >= 200 && response.status <= 299) {
           const data = await response.json()
-          setArticles(data)
+          setReviews(data)
         } else throw new Error(response.statusText)
       } catch (err) {
-        setArticles([])
+        setReviews([])
       }
     }
     fetchData()
-  }, [updateArticleList])
+  }, [updateReviewList])
 
   return (
-    <section className="my-6 bg-white p-6">
-      <Title>All articles</Title>
-      <ArticlesList articles={articles} />
+    <section className="my-6 bg-yellow-400 p-6 text-black rounded-lg">
+      <Title>All reviews for this movie</Title>
+      <ReviewList reviews={reviews} />
     </section>
   )
 }
 
-export default ArticleListSection
+export default ReviewListSection

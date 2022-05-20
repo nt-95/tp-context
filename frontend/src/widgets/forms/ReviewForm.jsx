@@ -6,14 +6,17 @@ import Input from "widgets/forms/Input"
 import Button from "widgets/buttons/Button"
 import Title from "widgets/text/Title"
 import ErrorMessage from "widgets/text/ErrorMessage"
+import SuccessMessage from "widgets/text/SuccessMessage"
 
-const ArticleForm = ({ setUpdateArticleList }) => {
-  const [articleData, setArticleData] = useState({})
+const ReviewForm = ({ setUpdateReviewList }) => {
+  const [reviewData, setReviewData] = useState({})
   const [errorMessage, setErrorMessage] = useState("")
+  const [successMessage, setSuccessMessage] = useState("")
 
   const handleChange = (e) => {
     setErrorMessage("")
-    setArticleData({ ...articleData, [e.target.id]: e.target.value })
+    setSuccessMessage("")
+    setReviewData({ ...reviewData, [e.target.id]: e.target.value })
   }
 
   const postArticle = async () => {
@@ -26,7 +29,7 @@ const ArticleForm = ({ setUpdateArticleList }) => {
         "http://localhost:2345/index.php/article/post",
         {
           method: "POST",
-          body: JSON.stringify(articleData),
+          body: JSON.stringify(reviewData),
           headers: headers,
           mode: "cors",
           credentials: "include",
@@ -34,17 +37,18 @@ const ArticleForm = ({ setUpdateArticleList }) => {
       )
       if (response.status >= 200 && response.status <= 299) {
         const data = await response.json()
-        console.log(data)
-        setUpdateArticleList(Math.random() * 1000000)
-        setArticleData({})
+        setUpdateReviewList(Math.random() * 1000000)
+        setSuccessMessage(data.message)
+        setReviewData({})
       } else throw new Error(response.statusText)
     } catch (err) {
       setErrorMessage(err.toString())
+      setSuccessMessage("")
     }
   }
 
   const submit = () => {
-    if (!articleData.title || !articleData.content) {
+    if (!reviewData.title || !reviewData.content) {
       setErrorMessage("Fields can not be empty")
       return
     }
@@ -53,32 +57,33 @@ const ArticleForm = ({ setUpdateArticleList }) => {
 
   return (
     <Form>
-      <Title>Write an article</Title>
+      <Title>Write a review</Title>
       <InputSection>
         <Label>Title</Label>
         <Input
           placeholder="Enter title"
           id="title"
           type="text"
-          value={articleData?.title ?? ""}
+          value={reviewData?.title ?? ""}
           onChange={(e) => handleChange(e)}
         ></Input>
       </InputSection>
       <InputSection>
         <Label>Content</Label>
         <textarea
-          className="border-2 border-purple-700 bg-purple-100 p-1"
-          placeholder="Write your article"
+          className="p-1 focus:outline-none text-black"
+          placeholder="Write your review"
           id="content"
           type="text"
-          value={articleData?.content ?? ""}
+          value={reviewData?.content ?? ""}
           onChange={(e) => handleChange(e)}
         ></textarea>
       </InputSection>
-      <Button onClick={() => submit()} name="Publish Article" primary />
+      <Button onClick={() => submit()} name="Publish Review" primary />
       <ErrorMessage errorMessage={errorMessage} />
+      <SuccessMessage successMessage={successMessage} />
     </Form>
   )
 }
 
-export default ArticleForm
+export default ReviewForm

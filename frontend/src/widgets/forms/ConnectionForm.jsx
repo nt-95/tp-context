@@ -15,11 +15,11 @@ const ConnectionForm = () => {
       setErrorMessage("Error: Please fill in all the fields")
       return
     }
-    const nameRegex = /^[a-zA-Z\_]+$/
+    const nameRegex = /^[0-9a-zA-Z\_]+$/
     const validUsername = userData.username.match(nameRegex)
     if (!validUsername) {
       setErrorMessage(
-        "Error: Your username must only contain characters A-Z, a-z and '_'"
+        "Error: Your username must only contain characters A-Z, a-z, 0-9 and '_'"
       )
       return
     }

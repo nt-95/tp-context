@@ -3,7 +3,7 @@ import React from "react"
 const Input = ({ placeholder, id, type, onChange, value }) => {
   return (
     <input
-      className={"p-1 mt-1 bg-white"}
+      className={"p-1 mt-1 bg-white text-black focus:outline-none"}
       placeholder={placeholder}
       id={id}
       type={type}

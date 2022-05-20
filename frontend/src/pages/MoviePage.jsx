@@ -4,6 +4,7 @@ import PageLayout from "layouts/PageLayout"
 import React from "react"
 import { Navigate } from "react-router-dom"
 import MoviePoster from "widgets/embedding/MoviePoster"
+import ReviewArea from "widgets/grouped/ReviewArea"
 
 const MoviePage = () => {
   const { currentMovie } = useMovieResultsContext()
@@ -22,6 +23,7 @@ const MoviePage = () => {
           <p className="mt-2">{currentMovie.release_date}</p>
           <p className="mt-2 mb-4">{`Note: ${currentMovie.vote_average}`}</p>
           <p className="mt-2 text-zinc-300">{currentMovie.overview}</p>
+          <ReviewArea />
         </section>
       </div>
     </PageLayout>

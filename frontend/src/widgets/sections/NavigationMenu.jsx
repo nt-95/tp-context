@@ -3,7 +3,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import SearchArea from "widgets/grouped/SearchArea"
 import AppLogo from "widgets/text/AppLogo"
-import UserArea from "widgets/sections/UserArea"
+import UserArea from "widgets/grouped/UserArea"
 
 const NavigationMenu = () => {
   const { isUserLoggedIn } = useUserContext()
