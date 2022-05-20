@@ -17,7 +17,7 @@ const HomePage = () => {
       <MoviePostersMarquee />
       <div className="flex items-center justify-center z-10 h-full w-full bg-black/50">
         <p className="text-3xl text-white text-center">
-          Welcome to the official IMBd
+          Welcome to the official IMBd webpage
         </p>
       </div>
     </PageLayout>
