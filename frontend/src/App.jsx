@@ -8,7 +8,7 @@ function App() {
     <Router>
       <UserProvider>
         <MovieResultsProvider>
-          <div className="container min-h-screen bg-zinc-800 overflow-y-scroll">
+          <div className="min-h-screen bg-zinc-800 overflow-hidden">
             <PageNavigation />
           </div>
         </MovieResultsProvider>
