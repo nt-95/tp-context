@@ -1,7 +1,6 @@
 import { useMovieResultsContext } from "contexts/MovieResultsContext"
 import React, { useEffect, useState } from "react"
 import ReviewList from "widgets/lists/ReviewList"
-import Title from "widgets/text/Title"
 
 const ReviewListSection = () => {
   const [reviews, setReviews] = useState([])
