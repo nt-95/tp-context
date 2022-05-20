@@ -10,7 +10,7 @@ const NavigationMenu = () => {
 
   const displaySignUpOrSignOutLink = () => {
     if (!isUserLoggedIn) {
-      return <Link to="connection">Sign Up</Link>
+      return <Link to="connection">Log In</Link>
     } else return <LogOutLink />
   }
 

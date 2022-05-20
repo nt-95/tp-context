@@ -10,7 +10,7 @@ const LogOutLink = () => {
 
   return (
     <Link to="/" onClick={() => handleLogOut()}>
-      Sign Out
+      Log Out
     </Link>
   )
 }
