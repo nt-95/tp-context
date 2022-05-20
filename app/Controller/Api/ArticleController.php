@@ -13,13 +13,11 @@ class ArticleController extends BaseController
         if (strtoupper($requestMethod) == 'GET') {
             try {
                 $articleModel = new ArticleModel();
- 
-                $intLimit = 10;
-                if (isset($arrQueryStringParams['limit']) && $arrQueryStringParams['limit']) {
-                    $intLimit = $arrQueryStringParams['limit'];
-                }
- 
-                $arrArticles = $articleModel->getArticles($intLimit);
+                $movieId = 0;
+                if (isset($arrQueryStringParams['movie_id']) && $arrQueryStringParams['movie_id']) {
+                    $movieId = $arrQueryStringParams['movie_id'];
+                } 
+                $arrArticles = $articleModel->getArticles($movieId);
                 $responseData = json_encode($arrArticles);
             } catch (Error $e) {
                 $strErrorDesc = $e->getMessage().'Something went wrong! Please contact support.';

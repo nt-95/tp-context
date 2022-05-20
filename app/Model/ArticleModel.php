@@ -3,9 +3,21 @@ require_once PROJECT_ROOT_PATH . "/Model/Database.php";
  
 class ArticleModel extends Database
 {
-    public function getArticles($limit)
+    public function getArticles($movie_id)
     {
-        return $this->select("SELECT * FROM articles ORDER BY id ASC LIMIT ?", ["i", $limit]);
+        $db = new Database();
+        $query = "SELECT * from `articles` WHERE `movie_id`=? ";
+        try {
+            $stmt = $db->connection->prepare($query);
+            $stmt->bind_param("i", $movie_id);
+            $stmt->execute();
+            $res = $stmt->get_result();
+            $data = $res->fetch_all(MYSQLI_ASSOC);
+            return $data;
+        } catch(Exception $e) {
+        throw New Exception( $e->getMessage() );
+    } 
+        // return $this->select("SELECT * FROM `articles` WHERE movie_id=? ORDER BY id ASC LIMIT 20", ["i", $movie_id]);
     }
 
     public function postArticle($body, $author)

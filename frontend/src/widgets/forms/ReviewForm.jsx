@@ -13,12 +13,16 @@ const ReviewForm = () => {
   const [errorMessage, setErrorMessage] = useState("")
   const [successMessage, setSuccessMessage] = useState("")
   const { setUpdateReviewList, currentMovie } = useMovieResultsContext()
-  const [reviewData, setReviewData] = useState({ movie_id: currentMovie.id })
+  const [reviewData, setReviewData] = useState({})
 
   const handleChange = (e) => {
     setErrorMessage("")
     setSuccessMessage("")
-    setReviewData({ ...reviewData, [e.target.id]: e.target.value })
+    setReviewData({
+      ...reviewData,
+      [e.target.id]: e.target.value,
+      movie_id: currentMovie.id,
+    })
   }
 
   const postArticle = async () => {

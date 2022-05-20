@@ -5,13 +5,13 @@ import Title from "widgets/text/Title"
 
 const ReviewListSection = () => {
   const [reviews, setReviews] = useState([])
-  const { updateReviewList } = useMovieResultsContext()
+  const { updateReviewList, currentMovie } = useMovieResultsContext()
 
   useEffect(() => {
     async function fetchData() {
       try {
         const response = await fetch(
-          "http://localhost:2345/index.php/article/list?limit=20"
+          `http://localhost:2345/index.php/article/list?movie_id=${currentMovie.id}`
         )
         if (response.status >= 200 && response.status <= 299) {
           const data = await response.json()
@@ -22,7 +22,7 @@ const ReviewListSection = () => {
       }
     }
     fetchData()
-  }, [updateReviewList])
+  }, [updateReviewList, currentMovie.id])
 
   return (
     <section className="my-6 text-white w-full">
