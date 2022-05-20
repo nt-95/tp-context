@@ -11,14 +11,23 @@ const SearchResults = () => {
     })
   }
 
-  if (!searchResults) {
-    return null
+  const handleResults = () => {
+    if (!searchResults) {
+      return null
+    }
+    if (!searchResults.results.length) {
+      return (
+        <p className="h-12 flex items-center text-gray-600">No results found</p>
+      )
+    }
+    return displaySearchResults()
   }
+
   return (
     <div
-      className={`bg-white w-96 max-h-[70%] mt-1 absolute text-black overflow-y-scroll ${styleHidden}`}
+      className={`bg-white w-96 max-h-[70%] mt-1 absolute text-black overflow-auto z-20 ${styleHidden}`}
     >
-      {displaySearchResults()}
+      {handleResults()}
     </div>
   )
 }
