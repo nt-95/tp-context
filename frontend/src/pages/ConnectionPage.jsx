@@ -38,9 +38,7 @@ const ConnectionPage = () => {
 
   return (
     <PageLayout>
-      <div className="border-2 border-purple-700 p-6 mt-8 bg-white w-96">
-        {getContent()}
-      </div>
+      <div className="bg-yellow-400 p-6 mt-8 w-96">{getContent()}</div>
     </PageLayout>
   )
 }
