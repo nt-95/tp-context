@@ -10,11 +10,7 @@ const MoviePoster = ({ movie }) => {
   }
 
   return (
-    <img
-      className="object-scale-down max-w-[90%] h-full"
-      src={getImagePath()}
-      alt="movie poster"
-    />
+    <img className="h-full lg:w-full" src={getImagePath()} alt="movie poster" />
   )
 }
 
